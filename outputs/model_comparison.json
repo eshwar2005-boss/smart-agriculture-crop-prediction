@@ -1,0 +1,15 @@
+{
+  "best_model": "Random Forest",
+  "test_accuracy": 0.9954545454545455,
+  "models": {
+    "Logistic Regression": {
+      "accuracy": 0.9727272727272728
+    },
+    "Random Forest": {
+      "accuracy": 0.9954545454545455
+    },
+    "Extra Trees": {
+      "accuracy": 0.9954545454545455
+    }
+  }
+}

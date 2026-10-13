@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+# Add the downloaded Kaggle dataset locally; respect its license before redistributing.
+data/*.csv
+models/*.joblib
+outputs/*.png
+outputs/*.txt
