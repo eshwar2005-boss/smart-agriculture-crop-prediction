@@ -1,62 +1,72 @@
 # Smart Agriculture Sensor Data Analysis and Crop Prediction
 
-A data-science project aligned with the submitted abstract: explore agricultural soil/climate data, visualize patterns, train a crop recommendation model, and use an interactive app to predict a suitable crop.
+A data science project that analyzes agricultural soil and climate data, visualizes patterns, trains machine learning models, and predicts suitable crops through an interactive application.
 
 ## Dataset
 
-Use the Kaggle **Crop Recommendation Dataset** by Atharva Ingle:
-https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset
+Use the Kaggle **Crop Recommendation Dataset** by Atharva Ingle.
 
-Download `Crop_recommendation.csv` and place it at `data/Crop_recommendation.csv`.
+Dataset link: https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset
 
-**Important project-scope note:** this commonly used dataset contains N, P, K, temperature, humidity, pH, rainfall and crop label. It does **not** contain soil-moisture readings or raw IoT sensor time-series. Therefore, this version predicts crops from soil nutrients and climate features; do not describe it as real-time sensor prediction unless sensor data is separately collected and integrated.
+Download `Crop_recommendation.csv` and place it in `data/Crop_recommendation.csv`.
+
+**Important:** This dataset contains nitrogen (N), phosphorus (P), potassium (K), temperature, humidity, pH, rainfall, and crop labels. It does not contain soil moisture readings or real-time IoT sensor data.
 
 ## Features
-- Dataset quality checks and exploratory data analysis
-- Charts saved under `outputs/`
-- Train/test split with stratification
-- Compare Logistic Regression, Random Forest, and Extra Trees
-- Accuracy, classification report, confusion matrix, and feature importance
-- Saved best model and interactive Streamlit prediction interface
 
-## Setup (Windows)
+- Dataset quality checks and exploratory data analysis
+- Agricultural data visualization and charts
+- Train/test split with stratification
+- Comparison of Logistic Regression, Random Forest, and Extra Trees
+- Model accuracy and classification report
+- Confusion matrix and feature importance
+- Saved machine learning model
+- Interactive Streamlit crop prediction interface
+
+## Setup on Windows
+
 ```bash
-py -m venv .venv
+python -m venv .venv
 .venv\Scripts\activate
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-## Run the project
-1. Put the Kaggle CSV in `data/Crop_recommendation.csv`.
-2. Run analysis and train models:
+## Run the Project
+
+1. Place the dataset in `data/Crop_recommendation.csv`.
+2. Train the models and generate analysis outputs:
+
 ```bash
 python src/train_model.py
 ```
-3. Launch the interface:
+
+3. Start the application:
+
 ```bash
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
-The app can also train the model automatically when the saved model is missing.
+## Project Structure
 
-## Project structure
 ```text
 smart_agriculture_project/
 ├── app.py
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
-├── data/                 # Place Kaggle CSV here (not committed by default)
-├── models/               # Trained model saved here
-├── outputs/              # EDA charts and evaluation output
+├── data/
+├── models/
+├── outputs/
 └── src/
     ├── __init__.py
     ├── data_utils.py
     └── train_model.py
 ```
 
-## Dataset citation
-Atharva Ingle, *Crop Recommendation Dataset*, Kaggle. Follow the license and attribution terms shown on the dataset page.
-
 ## Limitations
-This is a recommendation model trained on a public tabular dataset, not a substitute for agronomist advice. Results depend on dataset quality and should be validated locally before agricultural use. Dataset values are not live sensor readings.
+
+This project uses a public tabular dataset and does not perform live sensor monitoring. Predictions should be validated against local agricultural conditions before practical use.
+
+## Dataset Citation
+
+Atharva Ingle, Crop Recommendation Dataset, Kaggle. Refer to the dataset page for licensing and attribution terms.
